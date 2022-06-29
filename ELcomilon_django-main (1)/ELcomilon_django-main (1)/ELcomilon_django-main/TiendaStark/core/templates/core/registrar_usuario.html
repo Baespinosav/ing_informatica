@@ -1,0 +1,122 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block stylesheet %}
+<link href="{% static 'core/css/registrar_usuario.css'%}" rel="stylesheet">
+<link href="{% static 'core/css/style.css'%}" rel="stylesheet">
+<link href="{% static 'core/css/bootstrap.min.css' %}" rel="stylesheet">
+
+{% endblock %}
+
+{% block content %}
+<div class="container-xl py-1 bg-dark hero-header mb-1">
+    <div class="container my-1 py-1">
+        <div class="container text-right">
+            <div class="container text-right">
+
+                <h1 class="container text-center">Registarte en nuestra tienda.</h1>
+                <p class="container text-center">Para poder pedir en nuestra tienda, tienes que
+                    tener una cuenta creada.</p>
+            </div>
+            <div class="container text-right">
+                <h1></h1>
+                <div>
+                    <div class="content container text-right">
+                        <form method="POST" class="col-sm-2 col-md-6" action="" enctype="multipart/form-data"
+                            id="formulario">
+                            <div>
+                                {% csrf_token %} {{ form.as_p }}
+                                <div class="btn_guardar">
+                                    <button class="btn btn-primary" type="submit">Registrarme</button>
+                                </div>
+                                {% if mesg %}
+                                <div id="form_message" class="alert alert-danger" role="alert">{{ mesg }}</div>
+                                {% endif %}
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+
+
+
+<!-- <div class="container text-center">
+    <h1>Registrate</h1>
+    <div class="content container text-center">
+        <form method="POST" class="col-sm-12 col-md-6" action="" enctype="multipart/form-data" id="formulario">
+            {% csrf_token %} {{ form.as_p }}
+            <div class="btn_guardar">
+                <button class="btn btn-primary" type="submit">Registrarme</button>
+            </div>
+            {% if mesg %}
+            <div id="form_message" class="alert alert-danger" role="alert">{{ mesg }}</div>
+            {% endif %}
+        </form>
+    </div>
+</div> -->
+
+<!-- Footer Start -->
+<div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-3 col-md-6">
+                <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Empresa</h4>
+                <a class="btn btn-link" href="">Sobre nosotros</a>
+                <a class="btn btn-link" href="">Contacto</a>
+                <a class="btn btn-link" href="">Reservación</a>
+                <a class="btn btn-link" href="">Terminos de privacidad</a>
+                <a class="btn btn-link" href="">Terminos y condiciones</a>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Contacto</h4>
+                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Padre Alonso de Ovalle 1586, Santiago,
+                    Región Metropolitana</p>
+                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+569 9983 4556</p>
+                <p class="mb-2"><i class="fa fa-envelope me-3"></i>elcomilon@alimentos.com</p>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Horarios</h4>
+                <h5 class="text-light fw-normal">Lunes - Sabado</h5>
+                <p>09:00 - 21:00</p>
+                <h5 class="text-light fw-normal">Domingos</h5>
+                <p>10:00 - 16:00</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="copyright">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; <a class="border-bottom" href="#">Alimentos Santiago</a>, todos los derechos reservados.
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <div class="footer-menu">
+                        <a href="">Inicio</a>
+                        <a href="">Cookies</a>
+                        <a href="">Ayuda</a>
+                        <a href="">Preguntas frecuentes</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{% static 'core/lib/easing/easing.min.js' %}"></script>
+<script src="{% static 'core/lib/waypoints/waypoints.min.js' %}"></script>
+<script src="{% static 'core/lib/owlcarousel/owl.carousel.min.js' %}"></script>
+
+<!-- Template Javascript -->
+
+<script href="{% static 'core/js/main.js' %}" rel="stylesheet"></script>
+{% endblock content %}
